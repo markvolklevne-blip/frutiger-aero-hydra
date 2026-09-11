@@ -1,0 +1,122 @@
+/**
+ * @name Frutiger Aero Modern Glass
+ * @description A vibrant theme inspired by the late 2000s tech aesthetic: glossy buttons, glassmorphism, water drops, and vivid green/blue gradients.
+ * @author Golubb911
+ * @version 1.0.0
+ */
+
+:root {
+  /* Frutiger Aero Палитра */
+  --bg-gradient: linear-gradient(135deg, #0e5b8a 0%, #1a9667 50%, #6cd974 100%);
+  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-shadow: 0 8px 32px 0 rgba(11, 56, 82, 0.37);
+  
+  /* Переменные интерфейса Hydra */
+  --background-color: transparent;
+  --panel-background: var(--glass-bg);
+  --sidebar-background: rgba(255, 255, 255, 0.15);
+  
+  /* Текст и Акценты */
+  --text-color: #ffffff;
+  --text-muted: #d0f0d5;
+  --primary-color: #00ddff;
+  --primary-hover: #ffffff;
+  
+  /* Эффект глянцевого блика Frutiger */
+  --gloss-effect: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.05) 51%, rgba(255,255,255,0.2) 100%);
+}
+
+/* Общий фон с эффектом живой природы/воды */
+body, #root, .app-layout {
+  background: var(--bg-gradient) !important;
+  background-attachment: fixed !important;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Основные панели с эффектом Windows Aero Glass */
+.sidebar, .main-content, .panel, .card, .modal, .box {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+/* Глянцевые кнопки с двойным бликом */
+button, .button, .btn, .nav-item-active {
+  position: relative;
+  background: linear-gradient(to bottom, #2da4ff 0%, #0072ff 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 20px !important; /* Закругленные "капли" */
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.5) !important;
+  overflow: hidden;
+  transition: all 0.25s ease !important;
+}
+
+/* Наложение глянцевого блика на кнопки */
+button::after, .button::after, .btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.0) 100%);
+  pointer-events: none;
+}
+
+/* Эффект при наведении на кнопки */
+button:hover, .button:hover, .btn:hover {
+  background: linear-gradient(to bottom, #54beff 0%, #0088ff 100%) !important;
+  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.6), 0 0 8px rgba(255,255,255,0.8) !important;
+  transform: translateY(-1px);
+}
+
+/* Элементы списков и карточки игр */
+.game-card, .list-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.game-card:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(108, 217, 116, 0.5) !important;
+}
+
+/* Поля ввода (Инпуты) */
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: #0b3852 !important;
+  border: 1px solid rgba(0, 114, 255, 0.4) !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+  text-shadow: none !important;
+}
+
+input:focus {
+  border-color: #1a9667 !important;
+  box-shadow: 0 0 8px rgba(26, 150, 103, 0.6) !important;
+  outline: none;
+}
+
+/* Скроллбар в стиле стеклянной трубки */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
